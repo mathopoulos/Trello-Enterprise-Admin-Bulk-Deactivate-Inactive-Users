@@ -108,7 +108,7 @@ function putTogetherReport() {
                 membersResponse.forEach((member) => {
                     const daysActive = moment().diff(moment(member.dateLastAccessed), 'days');
                     let eligible = "";
-                    if (daysActive > daysSinceLastActive) {
+                    if (daysActive > daysSinceLastActive || daysActive == "NaN") {
                         eligible = "Yes";
                     } else {
                         eligible = "No";
