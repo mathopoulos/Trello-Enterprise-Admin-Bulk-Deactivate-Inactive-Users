@@ -113,7 +113,7 @@ function putTogetherReport() {
                     } else {
                         eligible = "No";
                     }
-                    const rowData = [member.memberEmail, member.id, member.fullName, daysActive, member.dateLastAccessed,eligible];
+                    const rowData = [member.memberEmail, member.id, member.fullName.replace(/,/g, ''), daysActive, member.dateLastAccessed,eligible];
                     fs.appendFileSync(`pre_run_member_report_${timestamp}.csv`, rowData.join(', ') + '\r\n');
                 });
 
